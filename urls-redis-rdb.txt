@@ -1,0 +1,6 @@
+http://localhost:90/redis-rdb/test-one POST
+http://localhost:90/redis-rdb?queueName=test-one GET
+http://localhost:90/redis-rdb/test-two POST
+http://localhost:90/redis-rdb?queueName=test-two GET
+http://localhost:90/redis-rdb/test-three POST
+http://localhost:90/redis-rdb?queueName=test-three GET

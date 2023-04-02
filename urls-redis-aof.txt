@@ -1,0 +1,6 @@
+http://localhost:90/redis-aof/test-one POST
+http://localhost:90/redis-aof?queueName=test-one GET
+http://localhost:90/redis-aof/test-two POST
+http://localhost:90/redis-aof?queueName=test-two GET
+http://localhost:90/redis-aof/test-three POST
+http://localhost:90/redis-aof?queueName=test-three GET

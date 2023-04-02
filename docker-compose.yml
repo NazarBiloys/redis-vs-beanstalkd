@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: "./build/Dockerfile"
+    container_name: app
+    ports:
+      - "90:90"
+    volumes:
+      - ./logs:/logs
+
+  redis-rdb:
+    image: redis:latest
+    container_name: redis-rdb
+    command: redis-server --save 900 1 --appendonly no
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/redis-rdb:/data-rdb
+
+  redis-aof:
+    image: redis:latest
+    container_name: redis-aof
+    command: redis-server --appendonly yes
+    ports:
+      - "6380:6379"
+    volumes:
+      - ./data/redis-aof:/data-aof
+
+  beanstalkd:
+    image: schickling/beanstalkd
+    container_name: beanstalkd
+    ports:
+      - "11300:11300"
+    volumes:
+      - .:/mnt/ddev_config

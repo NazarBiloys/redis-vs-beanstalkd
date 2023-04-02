@@ -1,0 +1,6 @@
+http://localhost:90/beanstalkd/test-one POST
+http://localhost:90/beanstalkd?queueName=test-one GET
+http://localhost:90/beanstalkd/test-two POST
+http://localhost:90/beanstalkd?queueName=test-two GET
+http://localhost:90/beanstalkd/test-three POST
+http://localhost:90/beanstalkd?queueName=test-three GET
